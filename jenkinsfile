@@ -16,10 +16,7 @@ pipeline {
         }
         
         stage('Deploy') {
-            steps {
-                sh 'npm install -g surge'
-                sh 'surge --project ./build --domain my-react-app.surge.sh'
-            }
+            echo"Deploy"
         }
     }
 }
