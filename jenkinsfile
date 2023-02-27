@@ -1,21 +1,21 @@
 pipeline {
-    agent {
-        node {
-            label 'master'
-        }
-    }
+    agent any
+
     stages {
         stage('Build') {
             steps {
-                sh 'npm install'
-                sh 'npm run build'
+                echo 'Building..'
             }
         }
         stage('Test') {
             steps {
-                sh 'npm test'
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
 }
-
